@@ -20,6 +20,7 @@ if(array_key_exists("Name",$_POST) && !empty($_POST["Name"])){
     $name_discution = $requete->fetch();
 
     if(empty($name_discution) == false){
+        
         $resultat = ["result" => false];
     }else{
         $requete = $bdd->prepare("
