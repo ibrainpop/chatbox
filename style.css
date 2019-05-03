@@ -1,0 +1,16 @@
+.new-chat{
+    max-width: 30%;
+    margin: auto;
+    margin-top: 15%;
+    border: 1px solid #f1f1f1;
+    padding: 4%;
+    box-shadow: 2px 2px 21px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+}
+
+h1{
+    color: #00a2b4;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 2%;
+}
