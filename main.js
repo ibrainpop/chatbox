@@ -30,11 +30,11 @@ function Creer(e){
         data : {Name : creation},
         dataType : 'json',
         success : function(data){
-            if(data == true){ 
+            console.log(data);
+            if(data.result == true){ 
                 //redirection vers page de connexion
                 window.location.replace("connexion.html");         
             }else{
-                
                 $("#error-msg").append('<div class="alert alert-danger" role="alert">Cette discussion existe déjà</div>')
             }
         }

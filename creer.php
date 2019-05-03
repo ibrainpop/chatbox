@@ -1,7 +1,7 @@
 <?php
 include 'bdd_connection.php';
 
-var_dump($_POST);
+
 $newName = $_POST['Name'];
 //permet de mettre en majuscule le nom de la discussion
 $newNom = strtoupper($newName);
@@ -20,13 +20,13 @@ if(array_key_exists("Name",$_POST) && !empty($_POST["Name"])){
     $name_discution = $requete->fetch();
 
     if(empty($name_discution) == false){
-        
+
         $resultat = ["result" => false];
     }else{
         $requete = $bdd->prepare("
         INSERT INTO  discussion (Name) VALUES (?)
         ");
-        $resultat = $requete->execute([$nom]);
+        $resultat = ["result" => $requete->execute([$nom])];
         }
         
     
