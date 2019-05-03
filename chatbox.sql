@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 03 Mai 2019 à 11:42
--- Version du serveur :  5.7.26-0ubuntu0.16.04.1
--- Version de PHP :  7.0.33-0ubuntu0.16.04.4
+-- Généré le :  Ven 03 Mai 2019 à 14:16
+-- Version du serveur :  5.7.25-0ubuntu0.16.04.2
+-- Version de PHP :  7.0.33-0ubuntu0.16.04.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -30,6 +30,13 @@ CREATE TABLE `discussion` (
   `Id_Discussion` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `discussion`
+--
+
+INSERT INTO `discussion` (`Id_Discussion`, `Name`) VALUES
+(1, 'HELLO-3WA');
 
 -- --------------------------------------------------------
 
@@ -70,7 +77,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT pour la table `discussion`
 --
 ALTER TABLE `discussion`
-  MODIFY `Id_Discussion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Discussion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `message`
 --
