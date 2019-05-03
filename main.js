@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#rejoindre").on("click", Rejoindre);
+    $("#rejoindre").on("submit", Rejoindre);
 })
 function Rejoindre(e){
     e.preventDefault();
@@ -10,10 +10,11 @@ function Rejoindre(e){
         data : {Name : name},
         dataType : 'json',
         success : function(data){
-            if(data.result == true){ //redirection vers page de connexion
+            if(data.result == true){ 
+                //redirection vers page de connexion
                 window.location.replace("connexion.html");
             }else{
-                $("#error-msg").append('<div class="alert alert-danger" role="alert">Cette discussion existe déjà</div>');
+                $("#error-msg").append('<div class="alert alert-danger" role="alert">Cette discussion n\'existe pas</div>');
             }
         }
 
