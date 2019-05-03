@@ -30,13 +30,12 @@ function Creer(e){
         data : {Name : creation},
         dataType : 'json',
         success : function(data){
-            if(data.result == true){ 
-                $("#error-msg").append('<div class="alert alert-danger" role="alert">Cette discussion existe déjà</div>')
-                
-            }else{
+            if(data == true){ 
                 //redirection vers page de connexion
-                window.location.replace("connexion.html");
+                window.location.replace("connexion.html");         
+            }else{
                 
+                $("#error-msg").append('<div class="alert alert-danger" role="alert">Cette discussion existe déjà</div>')
             }
         }
         
