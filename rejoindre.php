@@ -1,9 +1,9 @@
 <?php
 include "bdd_connection.php";
 
-$nom = $_post["name"];
+$nom = $_POST["Name"];
 
-if(array_key_exists("name",$_POST) && !empty($_POST["name"])){
+if(array_key_exists("Name",$_POST) && !empty($_POST["Name"])){
     $requete = $bdd->prepare("
     SELECT
         Id_Discussion
