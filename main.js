@@ -1,12 +1,13 @@
 $(document).ready(function(){
-    $("#rejoindre").on("click", Rejoindre);
+    $("#rejoindre").on("submit", Rejoindre);
 })
-function Rejoindre(){
+function Rejoindre(e){
+    e.preventDefault();
     var  name = $("#joinChat").val();
     $.ajax({
         url : 'rejoindre.php',
         method : 'post',
-        data : {name :name},
+        data : {Name : name},
         dataType : 'json',
         success : function(data){
             console.log(data);
