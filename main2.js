@@ -66,7 +66,7 @@ function processUser(){
           success : function (data){
             for(var i = 0; i<data.length; i++){
                 $("#displayChat1").append(data[i].Content);
-                $("#displayChat1").after('<p>Envoyé par ' + data[i].User_Pseudo + " le " + data[i].DateTime);
+                $("#displayChat1").after('<p>Envoyé par ' + data[i].User_Pseudo + " le " + data[i].DateTime + "</p>");
             }
           }
       })
