@@ -3,8 +3,8 @@ var idName;
 
 $(document).ready(function(){
     
-     pseudo = processUser();  
-     idName = idNumber();
+    pseudo = processUser();  
+    idName = idNumber();
      afficheMessage();
     $("#sendMessage").on("click", sendMessage);
 })
@@ -40,15 +40,21 @@ function processUser(){
   
 
   //fonction permettant d'envoyer les messages
-  function sendMessage(){       
-      var message = $("writtenMessage").val();
+  function sendMessage(e){ 
+      e.preventDefault();      
+      var message = $("#writtenMessage").val();
     
+      console.log(pseudo);
+      console.log(idName);
+    console.log(message);
+
       $.ajax({
           url : 'chat.php',
           method : 'post',
           data : {Content : message, Id_Discussion : idName, User_Peudo : pseudo},
-          success : function(){
-              console.log("message envoyé");
+          datatype : 'json',
+          success : function(data){
+              console.log(data);
           }
           
 
@@ -63,8 +69,7 @@ function processUser(){
           dataType : 'json',
           success : function (data){
             for(var i = 0; i<data.length; i++){
-                console.log(data[i].Content);
-                $("#displayChat1").text(data[i].Content);
+                $("#displayChat1").append(data[i].Content);
                 $("#displayChat1").after('<p>Envoyé par ' + data[i].User_Pseudo + " le " + data[i].DateTime);
             }
           }
