@@ -43,10 +43,6 @@ function processUser(){
   function sendMessage(e){ 
       e.preventDefault();      
       var message = $("#writtenMessage").val();
-    
-      console.log(pseudo);
-      console.log(idName);
-    console.log(message);
 
       $.ajax({
           url : 'chat.php',

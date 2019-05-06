@@ -2,7 +2,7 @@
 
 include "bdd_connection.php";
 
- var_dump($_POST);
+ 
 
 if(!empty($_POST["User_Pseudo"])){
     $newPseudo = $_POST["User_Pseudo"];
