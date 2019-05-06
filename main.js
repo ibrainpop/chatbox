@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $("#rejoindre").on("submit", Rejoindre);
     $(".new-chat").on("submit", Creer);
+    $(".connexion-chat").on("submit", Chat);
 })
 function Rejoindre(e){
     e.preventDefault();
@@ -30,14 +31,30 @@ function Creer(e){
         data : {Name : creation},
         dataType : 'json',
         success : function(data){
-            if(data == true){ 
+            console.log(data);
+            if(data.result == true){ 
                 //redirection vers page de connexion
                 window.location.replace("connexion.html");         
             }else{
-                
                 $("#error-msg").append('<div class="alert alert-danger" role="alert">Cette discussion existe déjà</div>')
             }
         }
         
+    })
+}
+function Chat(e){
+    e.preventDefault();
+    var pseudo = $("#Chat").val();
+    $.ajax({
+        url : 'chat.php',
+        method : 'post',
+        data : {User_Pseudo : pseudo},
+        dataType : 'json',
+        success : function(data){
+            console.log(data);
+        }
+
+
+
     })
 }

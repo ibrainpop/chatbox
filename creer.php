@@ -19,13 +19,13 @@ if(array_key_exists("Name",$_POST) && !empty($_POST["Name"])){
     $name_discution = $requete->fetch();
 
     if(empty($name_discution) == false){
-        
+
         $resultat = ["result" => false];
     }else{
         $requete = $bdd->prepare("
         INSERT INTO  discussion (Name) VALUES (?)
         ");
-        $resultat = $requete->execute([$nom]);
+        $resultat = ["result" => $requete->execute([$nom])];
         }
         
     

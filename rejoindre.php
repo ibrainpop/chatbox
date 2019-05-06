@@ -21,10 +21,11 @@ if(array_key_exists("Name",$_POST) && !empty($_POST["Name"])){
 
     if(empty($name_discution) == false){
         $resultat = ["result" => true];
+        // $resultat = $name_discution;
     }else{
         $resultat = ["result" => false];
     }
 }else{
     $resultat = ["result" => false];
 }
-echo json_encode($resultat);
+ echo json_encode($resultat);
