@@ -51,8 +51,8 @@ function processUser(){
       $.ajax({
           url : 'chat.php',
           method : 'post',
-          data : {Content : message, Id_Discussion : idName, User_Peudo : pseudo},
-          datatype : 'json',
+          data : {Content : message, Id_Discussion : idName, User_Pseudo : pseudo},
+          dataType : 'json',
           success : function(data){
               console.log(data);
           }
