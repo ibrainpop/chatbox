@@ -9,7 +9,7 @@ $id = $_POST["Id_Discussion"];
 if(!empty($_POST["User_Pseudo"])){
 
     $requete = $bdd->prepare("
-    INSERT INTO message Id_message, Id_Discussion, User_Pseudo, Content (?, ?, ?, ?)
+    INSERT INTO message Id_Discussion, User_Pseudo, Content, DateTime VALUES( ?, ?, ?, ?, ?)
     ");
 
     $requete->execute([$newPseudo]);
