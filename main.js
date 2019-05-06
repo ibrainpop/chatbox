@@ -49,24 +49,7 @@ function Chat(e){
 
     //récupération de l'id dans l'url
     var id = location.search.substring(15);
-<<<<<<< HEAD
-    
-    // $.ajax({
-    //     url : 'chat.php',
-    //     method : 'post',
-    //     data : {User_Pseudo : pseudo, Id_Discussion : id},
-    //     dataType : 'json',
-    //     success : function(data){
-    //         console.log(data);
-    //     }
-
-
-
-    // })
-}
-=======
 
     window.location.replace("chat.html?Id_Discussion=" + id +"&User_Pseudo=" + pseudo);
     
 }
->>>>>>> a3a381ea834dd835283fd3b87fb09056873bf51c
