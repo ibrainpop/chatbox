@@ -48,17 +48,7 @@ function Chat(e){
 
     //récupération de l'id dans l'url
     var id = location.search.substring(15);
+
+    window.location.replace("chat.html?Id_Discussion=" + id +"&User_Pseudo=" + pseudo);
     
-    $.ajax({
-        url : 'chat.php',
-        method : 'post',
-        data : {User_Pseudo : pseudo, Id_Discussion : id},
-        dataType : 'json',
-        success : function(data){
-            console.log(data);
-        }
-
-
-
-    })
 }
