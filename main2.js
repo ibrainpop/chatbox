@@ -31,7 +31,7 @@ function idNumber(id){
 //fonction permettant de récuperer le paramètre pseudo dans l'url
 function processUser(){    
     var parameters = location.search.substring(1).split("&");
-   var temp = parameters[1].split("=");
+    var temp = parameters[1].split("=");
     var pseudo = unescape(temp[1]);
     $(".utulisateur").append(pseudo);   
     return pseudo;
@@ -44,9 +44,9 @@ function processUser(){
       e.preventDefault();      
       var message = $("#writtenMessage").val();
     
-      console.log(pseudo);
-      console.log(idName);
-    console.log(message);
+        console.log(pseudo);
+        console.log(idName);
+        console.log(message);
 
       $.ajax({
           url : 'chat.php',
