@@ -2,20 +2,19 @@
 
 include "bdd_connection.php";
 
-$newPseudo = $_POST["User_Pseudo"];
-$id = $_POST["Id_Discussion"];
 
 
 if(!empty($_POST["User_Pseudo"])){
+    $newPseudo = $_POST["User_Pseudo"];
+    $id = $_POST["Id_Discussion"];
+    $message = $_POST["Content"];
+
 
     $requete = $bdd->prepare("
-    INSERT INTO message Id_Discussion, User_Pseudo, Content, DateTime VALUES( ?, ?, ?, ?, ?)
+    INSERT INTO message Id_Discussion, User_Pseudo, Content VALUES(?, ?, ?)
     ");
 
-    $requete->execute([$newPseudo]);
-    $current_discussion = $requete-fetchAll();
-    var_dump($newPseudo);
-}else{
-    echo "Merci de saisir un Pseudo";
+$requete->execute([$id, $newPseudo, $message]);
+
 }
-echo json_encode($newPseudo);
+
