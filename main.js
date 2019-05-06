@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("#rejoindre").on("submit", Rejoindre);
     $(".new-chat").on("submit", Creer);
     $(".connexion-chat").on("submit", Chat);
+    // $(".discussion").html("Discussion : <p><strong>" + pseudo + "</strong><p/>");
 })
 function Rejoindre(e){
     e.preventDefault();
@@ -49,16 +50,16 @@ function Chat(e){
     //récupération de l'id dans l'url
     var id = location.search.substring(15);
     
-    $.ajax({
-        url : 'chat.php',
-        method : 'post',
-        data : {User_Pseudo : pseudo, Id_Discussion : id},
-        dataType : 'json',
-        success : function(data){
-            console.log(data);
-        }
+    // $.ajax({
+    //     url : 'chat.php',
+    //     method : 'post',
+    //     data : {User_Pseudo : pseudo, Id_Discussion : id},
+    //     dataType : 'json',
+    //     success : function(data){
+    //         console.log(data);
+    //     }
 
 
 
-    })
+    // })
 }
