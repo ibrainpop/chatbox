@@ -3,11 +3,12 @@
 include "bdd_connection.php";
 
 $newPseudo = $_POST["User_Pseudo"];
+$id = $_POST["Id_Discussion"];
 
 if(!empty($_POST["User_Pseudo"])){
 
     $requete = $bdd->prepare("
-    INSERT INTO message Id_message, Id_Discussion, User_Pseudo, Content, DateTime VALUES ?, ?, ?, ?, ?
+    INSERT INTO message Id_Discussion, User_Pseudo, Content, DateTime VALUES( ?, ?, ?, ?, ?)
     ");
 
     $requete->execute([$newPseudo]);
