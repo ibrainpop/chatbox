@@ -1,7 +1,6 @@
 <?php
 include 'bdd_connection.php';
 
-var_dump($_POST);
 $newName = $_POST['Name'];
 //permet de mettre en majuscule le nom de la discussion
 $newNom = strtoupper($newName);
