@@ -2,7 +2,7 @@
 
 include "bdd_connection.php";
 
-$discussionName = $_POST["Name"];
+$discussionName = $_POST["Id_Discussion"];
 
 $requete = $bdd->prepare("
     SELECT Name FROM discussion WHERE Id_Discussion = ?
