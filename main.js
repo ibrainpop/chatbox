@@ -13,8 +13,8 @@ function Rejoindre(e){
         dataType : 'json',
         success : function(data){
             if(data.result == true){ 
-                //redirection vers page de connexion
-                window.location.replace("connexion.html");
+               // redirection vers page de connexion
+                window.location.replace("connexion.html?Id_Discussion=" +data.Id_Discussion); 
             }else{
                 $("#error-msg").append('<div class="alert alert-danger" role="alert">Cette discussion n\'existe pas</div>');
             }
@@ -34,7 +34,7 @@ function Creer(e){
             console.log(data);
             if(data.result == true){ 
                 //redirection vers page de connexion
-                window.location.replace("connexion.html");         
+                 window.location.replace("connexion.html?Id_Discussion =" + data.Discussion);         
             }else{
                 $("#error-msg").append('<div class="alert alert-danger" role="alert">Cette discussion existe déjà</div>')
             }
@@ -45,10 +45,14 @@ function Creer(e){
 function Chat(e){
     e.preventDefault();
     var pseudo = $("#Chat").val();
+
+    //récupération de l'id dans l'url
+    var id = location.search.substring(15);
+    
     $.ajax({
         url : 'chat.php',
         method : 'post',
-        data : {User_Pseudo : pseudo},
+        data : {User_Pseudo : pseudo, Id_Discussion : id},
         dataType : 'json',
         success : function(data){
             console.log(data);
