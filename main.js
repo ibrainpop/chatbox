@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $("#rejoindre").on("submit", Rejoindre);
     $(".new-chat").on("submit", Creer);
+    $(".connexion-chat").on("submit", Chat);
 })
 function Rejoindre(e){
     e.preventDefault();
@@ -39,5 +40,21 @@ function Creer(e){
             }
         }
         
+    })
+}
+function Chat(e){
+    e.preventDefault();
+    var pseudo = $("#Chat").val();
+    $.ajax({
+        url : 'chat.php',
+        method : 'post',
+        data : {User_Pseudo : pseudo},
+        dataType : 'json',
+        success : function(data){
+            console.log(data);
+        }
+
+
+
     })
 }
