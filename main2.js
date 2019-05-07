@@ -5,8 +5,9 @@ $(document).ready(function(){
     
     pseudo = processUser();  
     idName = idNumber();
-     afficheMessage();
+    afficheMessage();
     $("#sendMessage").on("click", sendMessage);
+    
 })
 
 //fonction permettant de récuperer le nom de la discussion en fonction de l'id
@@ -59,15 +60,26 @@ function processUser(){
 
   //fonction permettant de renvoyer les messages du chat
   function afficheMessage(){
+      
+      
       $.ajax({
           url : 'chatDisplay.php',
           method : 'post',
           dataType : 'json',
           success : function (data){
             for(var i = 0; i<data.length; i++){
+                if(pseudo == data[i].User_Pseudo){
                 $("#displayChat1").append(data[i].Content);
                 $("#displayChat1").after('<p>Envoyé par ' + data[i].User_Pseudo + " le " + data[i].DateTime + "</p>");
+                }else{
+                    $("#displayChat2").append(data[i].Content);
+                $("#displayChat2").after('<p>Envoyé par ' + data[i].User_Pseudo + " le " + data[i].DateTime + "</p>");
+                }
             }
           }
       })
-  }
+   
+    }
+    
+    
+    
