@@ -5,8 +5,9 @@ $(document).ready(function(){
     
     pseudo = processUser();  
     idName = idNumber();
-     afficheMessage();
+    afficheMessage();
     $("#sendMessage").on("click", sendMessage);
+    
 })
 
 //fonction permettant de récuperer le nom de la discussion en fonction de l'id
@@ -59,6 +60,8 @@ function processUser(){
 
   //fonction permettant de renvoyer les messages du chat
   function afficheMessage(){
+      
+      
       $.ajax({
           url : 'chatDisplay.php',
           method : 'post',
@@ -75,4 +78,8 @@ function processUser(){
             }
           }
       })
-  }
+   
+    }
+    
+    
+    
