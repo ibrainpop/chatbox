@@ -82,3 +82,33 @@ input{
     color: white;
 }
 
+#displayChat1{
+    text-align: left;
+    background: grey;
+}
+
+.chat-en-cours1 p{
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+#displayChat2{
+    text-align: right;
+    background: #00a2b4;
+}
+
+.chat-en-cours2 p{
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+.container-fluid{
+    max-width: 90%;
+    margin: auto;
+}
+
+.conteneur-chat{
+    box-shadow: 2px 2px 21px 0px rgba(0,0,0,0.75);
+    margin-top: 2%; 
+    display: flex;
+}
