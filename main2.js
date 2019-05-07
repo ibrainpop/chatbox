@@ -7,6 +7,7 @@ $(document).ready(function(){
     idName = idNumber();
     afficheMessage();
     $("#sendMessage").on("click", sendMessage);
+    setInterval(afficheMessage, 2000);
     
 })
 
@@ -53,10 +54,10 @@ function processUser(){
           success : function(data){
               console.log(data);
               afficheMessage();
-          }
-          
+          }          
 
       })
+      $("#writtenMessage").val("");
   }
 
   //fonction permettant de renvoyer les messages du chat
@@ -84,6 +85,7 @@ function processUser(){
       })
    
     }
+    // setInterval(sendMessage, 2000);
     
     
     
