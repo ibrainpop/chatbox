@@ -77,7 +77,7 @@ function processUser(){
                 if(pseudo == data[i].User_Pseudo){
                 $("#displayChat1").append("<div class='self' ><p class='sent' data-id= "+ data[i].Id_message + ">" + data[i].Content + "</p>" + "<p>Envoyé par " + data[i].User_Pseudo + " le " + data[i].DateTime + "</p></div>");
             }else{
-                $("#displayChat1").append("<div><p class='sent' data-id= "+ data[i].Id_message + ">" + data[i].Content + "</p>" + "<p>Envoyé par " + data[i].User_Pseudo + " le " + data[i].DateTime + "</p></div>");
+                $("#displayChat1").append("<div class='other'><p class='sent' data-id= "+ data[i].Id_message + ">" + data[i].Content + "</p>" + "<p>Envoyé par " + data[i].User_Pseudo + " le " + data[i].DateTime + "</p></div>");
                 }
             }
             
