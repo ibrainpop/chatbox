@@ -9,6 +9,7 @@ $(document).ready(function(){
     $("#sendMessage").on("click", sendMessage);
     setInterval(afficheMessage, 2000);
     
+    
 })
 
 //fonction permettant de récuperer le nom de la discussion en fonction de l'id
