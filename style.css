@@ -82,33 +82,43 @@ input{
     color: white;
 }
 
-#displayChat1{
-    text-align: left;
-    background: grey;
-}
-
-.chat-en-cours1 p{
+/* .chat-en-cours1 p{
     text-align: left;
     font-size: 0.8rem;
-}
-
-#displayChat2{
-    text-align: right;
-    background: #00a2b4;
-}
-
-.chat-en-cours2 p{
-    text-align: right;
-    font-size: 0.8rem;
-}
+} */
 
 .container-fluid{
     max-width: 90%;
     margin: auto;
-}
+} 
 
-.conteneur-chat{
+.chat-en-cours1{
     box-shadow: 2px 2px 21px 0px rgba(0,0,0,0.75);
     margin-top: 2%; 
-    display: flex;
+}
+
+.self{
+    width: 50%;  
+    margin-left: 0;
+}
+
+.self p:first-child{
+    background: rgb(189, 175, 175);
+}
+
+.self p:nth-child(2){
+    font-size: 0.8em;
+}
+
+.other{
+    margin-left: 50%;
+    width: 50%;
+}
+
+.other p:first-child{
+    background: #00a2b4;
+}
+
+.other p:nth-child(2){
+    font-size: 0.8em;
 }
