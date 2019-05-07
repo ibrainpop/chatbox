@@ -52,6 +52,7 @@ function processUser(){
           dataType : 'json',
           success : function(data){
               console.log(data);
+              afficheMessage();
           }
           
 
@@ -60,22 +61,25 @@ function processUser(){
 
   //fonction permettant de renvoyer les messages du chat
   function afficheMessage(){
-      
-      
+    var idMessageCurrent = $("#displayChat1 div:last-of-type .sent").data("id");
+    console.log(idMessageCurrent);
+    if(idMessageCurrent == undefined) idMessageCurrent = 0;
+            
       $.ajax({
           url : 'chatDisplay.php',
           method : 'post',
+          data: {lastId : idMessageCurrent},
           dataType : 'json',
           success : function (data){
+            
             for(var i = 0; i<data.length; i++){
                 if(pseudo == data[i].User_Pseudo){
-                $("#displayChat1").append(data[i].Content);
-                $("#displayChat1").after('<p>Envoyé par ' + data[i].User_Pseudo + " le " + data[i].DateTime + "</p>");
-                }else{
-                    $("#displayChat2").append(data[i].Content);
-                $("#displayChat2").after('<p>Envoyé par ' + data[i].User_Pseudo + " le " + data[i].DateTime + "</p>");
+                $("#displayChat1").append("<div class='self' ><p class='sent' data-id= "+ data[i].Id_message + ">" + data[i].Content + "</p>" + "<p>Envoyé par " + data[i].User_Pseudo + " le " + data[i].DateTime + "</p></div>");
+            }else{
+                $("#displayChat1").append("<div><p class='sent' data-id= "+ data[i].Id_message + ">" + data[i].Content + "</p>" + "<p>Envoyé par " + data[i].User_Pseudo + " le " + data[i].DateTime + "</p></div>");
                 }
             }
+            
           }
       })
    
