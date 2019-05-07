@@ -8,6 +8,9 @@ $(document).ready(function(){
     afficheMessage();
     $("#sendMessage").on("click", sendMessage);
     setInterval(afficheMessage, 2000);
+    $(".quit").on("click", function (){
+        window.location.replace("rejoindre.html");
+    });
     
     
 })
