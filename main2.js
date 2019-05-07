@@ -6,14 +6,18 @@ $(document).ready(function(){
     pseudo = processUser();  
     idName = idNumber();
     afficheMessage();
+    scroll();
     $("#sendMessage").on("click", sendMessage);
     setInterval(afficheMessage, 2000);
     $(".quit").on("click", function (){
         window.location.replace("rejoindre.html");
     });
-    
-    
+
+   
 })
+    
+
+
 
 //fonction permettant de récuperer le nom de la discussion en fonction de l'id
 function idNumber(id){
@@ -62,6 +66,8 @@ function processUser(){
 
       })
       $("#writtenMessage").val("");
+       
+      
   }
 
   //fonction permettant de renvoyer les messages du chat
@@ -87,9 +93,18 @@ function processUser(){
             
           }
       })
-   
+      
     }
-    // setInterval(sendMessage, 2000);
-    
-    
-    
+
+    function scroll(){
+        // var objDiv = $("#displayChat1");
+        //      if(objDiv.length > 0){
+        //         objDiv[0].scrollTop = objDiv[0].scrollHaight;
+        //     }
+
+        // $("#displayChat1").animate({ scrollTop: $(document).height()}, 100);
+
+        // $('#displayChat1').animate({scrollTop: $("#displayChat1").offset().top},1000);
+
+
+    }

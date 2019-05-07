@@ -122,3 +122,9 @@ input{
 .other p:nth-child(2){
     font-size: 0.8em;
 }
+
+#displayChat1{
+    width: 100%;
+    height: 600px;
+    overflow: auto;
+}
